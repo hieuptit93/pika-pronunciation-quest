@@ -1,7 +1,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import ForestScene from './ForestScene';
+import ForestStage from './stages/ForestStage';
+import LagoonStage from './stages/LagoonStage';
+import StraitStage from './stages/StraitStage';
+import DeepWatersStage from './stages/DeepWatersStage';
+import StormBayStage from './stages/StormBayStage';
 import ProgressTracker from './ProgressTracker';
 
 interface GameStageProps {
@@ -47,7 +51,7 @@ const GameStage: React.FC<GameStageProps> = ({ stage = 1 }) => {
             
             <div className="rounded-lg bg-forest/10 p-3">
               <h3 className="font-medium mb-1">Your goal:</h3>
-              <p className="text-sm">Collect 10 items by pronouncing forest-themed words correctly.</p>
+              <p className="text-sm">Collect 10 items by pronouncing {stageName.toLowerCase()}-themed words correctly.</p>
             </div>
             
             <div className="space-y-2">
@@ -67,10 +71,10 @@ const GameStage: React.FC<GameStageProps> = ({ stage = 1 }) => {
             
             <div className="pt-4">
               <ProgressTracker 
-                currentStage={1} 
+                currentStage={stage} 
                 totalStages={5}
-                stageName="Forest Beginning"
-                progress={20}
+                stageName={stageName}
+                progress={stage === 1 ? 20 : stage === 2 ? 30 : stage === 3 ? 50 : stage === 4 ? 70 : 90}
               />
             </div>
           </div>
@@ -83,7 +87,11 @@ const GameStage: React.FC<GameStageProps> = ({ stage = 1 }) => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="lg:col-span-2"
         >
-          <ForestScene />
+          {stage === 1 && <ForestStage />}
+          {stage === 2 && <LagoonStage />}
+          {stage === 3 && <StraitStage />}
+          {stage === 4 && <DeepWatersStage />}
+          {stage === 5 && <StormBayStage />}
         </motion.div>
       </div>
     </div>

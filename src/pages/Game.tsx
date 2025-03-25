@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import TransitionEffect from '@/components/TransitionEffect';
 import GameStage from '@/components/GameStage';
@@ -8,6 +8,18 @@ import Navigation from '@/components/Navigation';
 
 const Game: React.FC = () => {
   const [currentStage, setCurrentStage] = useState(1);
+  
+  // Update background theme based on current stage
+  const getBgTheme = () => {
+    switch(currentStage) {
+      case 1: return "forest";
+      case 2: return "lagoon";
+      case 3: return "night";
+      case 4: return "ocean";
+      case 5: return "storm";
+      default: return "forest";
+    }
+  };
   
   const stageNames = [
     "Forest Beginning",
@@ -20,7 +32,7 @@ const Game: React.FC = () => {
   return (
     <TransitionEffect>
       <div className="min-h-screen pt-20">
-        <AnimatedBackground theme="forest" />
+        <AnimatedBackground theme={getBgTheme()} />
         <Navigation />
         
         {/* Stage Selection */}
