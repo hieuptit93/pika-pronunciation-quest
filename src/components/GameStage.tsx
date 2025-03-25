@@ -40,7 +40,7 @@ const GameStage: React.FC<GameStageProps> = ({ stage = 1 }) => {
     switch(stage) {
       case 1: return "Focus on the 'tr' sound at the beginning";
       case 2: return "Focus on the 'wa' sound";
-      case 3: return "Focus on the short 'i' sound";
+      case 3: return "Focus on the 'i' sound";
       case 4: return "Focus on the 'sh' sound in the middle";
       case 5: return "Focus on the 'st' blend at the beginning";
       default: return "";
@@ -115,14 +115,14 @@ const GameStage: React.FC<GameStageProps> = ({ stage = 1 }) => {
           {stage === 3 && <StraitStage />}
           {stage === 4 && <DeepWatersStage />}
           {stage === 5 && <StormBayStage />}
-          
-          {/* PronunciationChallenge moved here, outside the stage components */}
-          <PronunciationChallenge 
-            word={stageWord}
-            hint={stageHint}
-          />
         </motion.div>
       </div>
+      
+      {/* Pronunciation challenge positioned outside the game area */}
+      <PronunciationChallenge 
+        word={stageWord}
+        hint={stageHint}
+      />
     </div>
   );
 };

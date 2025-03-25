@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import TransitionEffect from '@/components/TransitionEffect';
 import GameStage from '@/components/GameStage';
@@ -31,7 +31,7 @@ const Game: React.FC = () => {
   
   return (
     <TransitionEffect>
-      <div className="min-h-screen pt-20">
+      <div className="min-h-screen pt-20 pb-20">
         <AnimatedBackground theme={getBgTheme()} />
         <Navigation />
         

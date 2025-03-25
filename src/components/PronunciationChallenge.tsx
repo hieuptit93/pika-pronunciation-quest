@@ -40,7 +40,7 @@ const PronunciationChallenge: React.FC<PronunciationChallengeProps> = ({
 
   return (
     <motion.div 
-      className="fixed bottom-4 right-4 glass-card rounded-xl p-4 w-[250px] sm:w-[280px] shadow-lg border border-white/20 backdrop-blur-md z-10"
+      className="fixed bottom-4 right-4 glass-card rounded-xl p-4 w-[250px] sm:w-[280px] shadow-lg border border-white/20 backdrop-blur-md z-50"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -92,7 +92,7 @@ const PronunciationChallenge: React.FC<PronunciationChallengeProps> = ({
       <button
         onClick={handleListen}
         disabled={isListening || status === 'success'}
-        className="relative w-full py-2 rounded-lg bg-primary text-white font-medium disabled:opacity-50 transition-all text-sm"
+        className="relative w-full py-2.5 rounded-lg bg-primary text-white font-medium disabled:opacity-50 transition-all text-sm"
       >
         {isListening ? (
           <div className="flex items-center justify-center gap-2">
