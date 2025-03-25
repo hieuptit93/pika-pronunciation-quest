@@ -14,8 +14,8 @@ const Game: React.FC = () => {
     switch(currentStage) {
       case 1: return "forest";
       case 2: return "lagoon";
-      case 3: return "night";
-      case 4: return "ocean";
+      case 3: return "strait";
+      case 4: return "deep";
       case 5: return "storm";
       default: return "forest";
     }
