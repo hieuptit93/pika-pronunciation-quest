@@ -7,6 +7,7 @@ import StraitStage from './stages/StraitStage';
 import DeepWatersStage from './stages/DeepWatersStage';
 import StormBayStage from './stages/StormBayStage';
 import ProgressTracker from './ProgressTracker';
+import PronunciationChallenge from './PronunciationChallenge';
 
 interface GameStageProps {
   stage: number;
@@ -24,8 +25,30 @@ const GameStage: React.FC<GameStageProps> = ({ stage = 1 }) => {
     }
   })();
 
+  const stageWord = (() => {
+    switch(stage) {
+      case 1: return "tree";
+      case 2: return "water";
+      case 3: return "wind";
+      case 4: return "ocean";
+      case 5: return "storm";
+      default: return "tree";
+    }
+  })();
+
+  const stageHint = (() => {
+    switch(stage) {
+      case 1: return "Focus on the 'tr' sound at the beginning";
+      case 2: return "Focus on the 'wa' sound";
+      case 3: return "Focus on the short 'i' sound";
+      case 4: return "Focus on the 'sh' sound in the middle";
+      case 5: return "Focus on the 'st' blend at the beginning";
+      default: return "";
+    }
+  })();
+
   return (
-    <div className="container max-w-6xl mx-auto px-4 py-8">
+    <div className="container max-w-6xl mx-auto px-4 py-8 relative">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -85,13 +108,19 @@ const GameStage: React.FC<GameStageProps> = ({ stage = 1 }) => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="lg:col-span-2"
+          className="lg:col-span-2 relative"
         >
           {stage === 1 && <ForestStage />}
           {stage === 2 && <LagoonStage />}
           {stage === 3 && <StraitStage />}
           {stage === 4 && <DeepWatersStage />}
           {stage === 5 && <StormBayStage />}
+          
+          {/* PronunciationChallenge moved here, outside the stage components */}
+          <PronunciationChallenge 
+            word={stageWord}
+            hint={stageHint}
+          />
         </motion.div>
       </div>
     </div>

@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Character from '../Character';
-import PronunciationChallenge from '../PronunciationChallenge';
 
 const StraitStage: React.FC = () => {
   return (
@@ -122,14 +121,6 @@ const StraitStage: React.FC = () => {
         <div className="w-2 h-2 bg-white/60 rounded-full"></div>
         <div className="w-2 h-2 bg-white/60 rounded-full"></div>
         <div className="w-2 h-2 bg-white/60 rounded-full"></div>
-      </div>
-      
-      {/* Game Challenge UI */}
-      <div className="absolute bottom-[20%] left-1/2 transform -translate-x-1/2">
-        <PronunciationChallenge 
-          word="wind"
-          hint="Focus on the short 'i' sound"
-        />
       </div>
       
       {/* Progress bar */}

@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Character from '../Character';
-import PronunciationChallenge from '../PronunciationChallenge';
 
 const LagoonStage: React.FC = () => {
   return (
@@ -119,14 +118,6 @@ const LagoonStage: React.FC = () => {
         <div className="w-8 h-4 bg-blue-600 rounded-full"></div>
         <div className="absolute top-0 right-0 w-4 h-2 bg-blue-600 transform rotate-45 translate-x-1 -translate-y-1"></div>
       </motion.div>
-      
-      {/* Game Challenge UI */}
-      <div className="absolute bottom-[20%] left-1/2 transform -translate-x-1/2">
-        <PronunciationChallenge 
-          word="water"
-          hint="Focus on the 'wa' sound"
-        />
-      </div>
       
       {/* Progress bar */}
       <div className="absolute top-4 left-4 right-4">

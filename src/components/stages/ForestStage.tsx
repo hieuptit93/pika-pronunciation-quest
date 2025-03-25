@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Character from '../Character';
-import PronunciationChallenge from '../PronunciationChallenge';
 import ProgressTracker from '../ProgressTracker';
 
 const ForestStage: React.FC = () => {
@@ -115,14 +114,6 @@ const ForestStage: React.FC = () => {
           repeatType: "reverse"
         }}
       />
-      
-      {/* Game Challenge UI */}
-      <div className="absolute bottom-[20%] left-1/2 transform -translate-x-1/2">
-        <PronunciationChallenge 
-          word="tree"
-          hint="Focus on the 'tr' sound at the beginning"
-        />
-      </div>
       
       {/* Progress bar */}
       <div className="absolute top-4 left-4 right-4">
