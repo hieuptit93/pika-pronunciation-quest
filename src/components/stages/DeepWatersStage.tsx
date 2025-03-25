@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Character from '../Character';
-import PronunciationChallenge from '../PronunciationChallenge';
 
 const DeepWatersStage: React.FC = () => {
   return (
@@ -167,14 +166,6 @@ const DeepWatersStage: React.FC = () => {
             }}
           />
         </div>
-      </div>
-      
-      {/* Game Challenge UI */}
-      <div className="absolute bottom-[20%] left-1/2 transform -translate-x-1/2">
-        <PronunciationChallenge 
-          word="ocean"
-          hint="Focus on the 'sh' sound in the middle"
-        />
       </div>
       
       {/* Progress bar */}

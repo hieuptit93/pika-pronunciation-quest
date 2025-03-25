@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Character from '../Character';
-import PronunciationChallenge from '../PronunciationChallenge';
 
 const StormBayStage: React.FC = () => {
   return (
@@ -196,14 +195,6 @@ const StormBayStage: React.FC = () => {
       >
         <div className="w-full h-full rounded-full bg-gradient-radial from-blue-300/5 to-transparent"></div>
       </motion.div>
-      
-      {/* Game Challenge UI */}
-      <div className="absolute bottom-[20%] left-1/2 transform -translate-x-1/2">
-        <PronunciationChallenge 
-          word="storm"
-          hint="Focus on the 'st' blend at the beginning"
-        />
-      </div>
       
       {/* Progress bar */}
       <div className="absolute top-4 left-4 right-4">
